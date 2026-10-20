@@ -9,7 +9,7 @@ class Role extends Model
 {
 
     public function users(): BelongsToMany{
-        return $this->belongsToMany(User::class, 'user_roles');
+        return $this->belongsToMany(User::class, 'user_roles')->withPivot('assigned_by')->withTimestamps();
     }
-
+    
 }
