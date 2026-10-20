@@ -5,9 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Laravel\Sanctum\HasApiTokens;
 
 class User extends Model
 {
+    use HasApiTokens;
+
     public function roles(): BelongsToMany{
         return $this->belongsToMany(Role::class, 'user_roles')->withPivot('assigned_by')->withTimestamps();
     }
