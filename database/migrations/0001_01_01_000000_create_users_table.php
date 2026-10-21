@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->boolean('is_active')->default(true);
-            $table->timestamp('deactived_at')->default(null);
+            $table->timestamp('deactived_at')->nullable();
             $table->timestamps();
         });
 

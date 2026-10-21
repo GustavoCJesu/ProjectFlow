@@ -9,6 +9,7 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Model
 {
+    protected $fillable = ['email', 'name', 'password', 'is_active', 'deactived_at'];
     use HasApiTokens;
 
     public function roles(): BelongsToMany{
